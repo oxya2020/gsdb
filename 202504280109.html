@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <title>Google Sheet Database Demo</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 30px; }
+    form input, form textarea, form button { display: block; margin: 10px 0; width: 300px; }
+    #data ul { list-style: none; padding: 0; }
+    #data li { margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <h1>Google Sheet 小型資料庫 DEMO</h1>
+
+  <form id="myForm">
+    <input type="text" id="name" placeholder="名字" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <textarea id="message" placeholder="留言..." required></textarea>
+    <button type="submit">送出資料</button>
+  </form>
+
+  <h2>現有資料</h2>
+  <div id="data">載入中...</div>
+
+  <script>
+    const API_URL = 'hhttps://script.google.com/macros/s/AKfycbwegY_bTIR7Ge71U-xxmrAzouzkYTrni7D83qVKBCQC-faU0Is2gt-BNN_2bOFymxNx/exec'; // ⚡換成你的部署網址，記得有 /exec
+
+    // 送出表單
+    document.getElementById('myForm').addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = {
+        Name: document.getElementById('name').value.trim(),
+        Email: document.getElementById('email').value.trim(),
+        Message: document.getElementById('message').value.trim()
+      };
+
+      try {
+        const response = await fetch(API_URL, {
+          method: 'POST',
+          mode: 'no-cors', // 加這行
+          body: JSON.stringify(formData),
+          headers: {
+            'Content-Type': 'application/json'
+          }
+        });
+        const result = await response.json();
+        if (result.success) {
+          alert('送出成功！');
+          document.getElementById('myForm').reset();
+          loadData();
+        } else {
+          alert('送出失敗：' + result.message);
+        }
+      } catch (error) {
+        alert('錯誤：' + error.message);
+      }
+    });
+
+    // 讀取資料
+    async function loadData() {
+      try {
+        const response = await fetch(API_URL);
+        const result = await response.json();
+        if (result.success) {
+          const data = result.data;
+          let html = '<ul>';
+          data.forEach(row => {
+            html += `<li><strong>${row.Name}</strong> (${row.Email}): ${row.Message}</li>`;
+          });
+          html += '</ul>';
+          document.getElementById('data').innerHTML = html;
+        } else {
+          document.getElementById('data').innerText = '讀取失敗：' + result.message;
+        }
+      } catch (error) {
+        document.getElementById('data').innerText = '錯誤：' + error.message;
+      }
+    }
+
+    loadData(); // 頁面載入時馬上讀資料
+  </script>
+</body>
+</html>
