@@ -1,0 +1,57 @@
+<!-- 註解：此為 HTML、CSS、Javascript 分開儲放 -->
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RWD CSS Grid 布局</title>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />    
+<style>
+:root {
+  --FiveColor01: lightskyblue;
+  --FiveColor02: #ff6;
+  --FiveColor03: #f9c;
+  --FiveColor04: lightgreen;
+  --FiveColor05: #c9f;
+}
+* {
+  margin:0;
+  padding:0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #8e8;    
+  color: #000;    
+}
+
+#container {
+  width:384px;
+  height:669px;
+  margin:3px auto 3px auto;
+  background:#fff;
+  border:1px solid #000;
+
+}
+
+
+/* RWD 響應式 */
+/* 螢幕寬度 <= 390px */
+@media screen and (max-width: 390px) {
+  #container {
+    width:384px;
+    height:669px;
+    margin:3px auto 3px auto;
+  }
+  body {
+    background: lightskyblue;
+  }    
+}
+</style>
+  </head>
+  <body>
+    <div id="container"><h3>&nbsp;&nbsp;&nbsp;2025.05.28 04:06 TEST</h3>
+    
+    </div>
+  </body>
+</html>
