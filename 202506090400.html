@@ -23,6 +23,14 @@
     --FiveColor05: #c9f;
 }
 
+:root {
+    --FiveColor01: lightskyblue;
+    --FiveColor02: #ff6;
+    --FiveColor03: #f9c;
+    --FiveColor04: lightgreen;
+    --FiveColor05: #c9f;
+}
+
 * {
     margin:0;
     padding:0;
@@ -61,9 +69,11 @@
 
 .header { 
     grid-area: header;
-    position: relative;
+    position: fixed;
     top:0;
+    width:100vw;
     height:6vh;
+    background: var(--FiveColor02);
 }
 
 .item-1fc { 
@@ -84,8 +94,9 @@
 
 .main {
     grid-area: main;
-    position: relative;
-    top:0vh;
+    position: absolute;
+    top:6vh;
+    width:100vw;
     height:91vh;
     background:var(--FiveColor01);
 }
@@ -107,9 +118,11 @@
 
 .footer { 
     grid-area: footer;
-    position: relative;
+    position: fixed;
     bottom:0;
+    width:100vw;
     height:3vh;
+    background: var(--FiveColor02);
 }
 
 .item-3fc { 
@@ -271,7 +284,6 @@
     }
 }
 */
-
 
     </style>
   </head>
