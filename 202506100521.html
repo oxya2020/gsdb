@@ -1,0 +1,136 @@
+<!-- 此網頁為 HTML、CSS、Javascript 分開存放 -->
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> 網頁標題 </title>
+
+    <!-- 連結外部 GOOGLE FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"/>
+    <!-- 連結外部 GOOGLE ICONS -->      
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    
+    <!-- 整合存放：HTML、CSS、Javascript 整合存至 index.html <style> ... </style> -->
+    <style>
+        :root {
+            --FiveColor01: lightskyblue;
+            --FiveColor02: #ff6;
+            --FiveColor03: #f9c;
+            --FiveColor04: lightgreen;
+            --FiveColor05: #c9f;
+        }
+
+        * {
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+        }
+
+        body {
+            color: #000;    
+        }
+
+        #containerI {
+            position: fixed;
+            bottom: 0;
+            margin: 3px;
+            min-height: 97vh;
+            text-align: center;
+            container-type: size;
+            container-name: resize-box;
+        }
+
+        .main {
+            position: relative;
+            bottom:0;
+            background:#fff;
+            opacity: 0.5;
+            color:#000;
+        }
+
+
+        @media screen and (-webkit-min-device-pixel-ratio:2) { 
+        #safari { display: block; } 
+        } 
+
+
+        /* 螢幕寬度 <= 384px */
+        @media (max-width: 384px) {
+            #containerI {
+                width: 384px;
+                height: 99%;
+                background: var(--FiveColor02);
+            }
+        }
+
+        /* 螢幕寬度 385px - 389px */
+        @media (min-width: 385px) and (max-width: 389px) {
+            #containerI {
+                width: 100vw;
+                height: 99%;
+                margin: 3px;
+                background: var(--FiveColor03);
+            }
+        }
+
+        /* 螢幕寬度 390px - 420px */
+        @media (min-width: 390px) and (max-width: 420px) {
+            #containerI {
+                width: 384px;
+                height: 99%;        
+                max-height: 669px;             
+                background: var(--FiveColor01);
+            }
+        }
+
+        /* 螢幕寬度 > 421px */
+        @media (min-width: 421px) {
+            #containerI {
+                width: 452px;
+                background: var(--FiveColor04);
+            }
+        }
+
+        /*
+        @container resize-box {
+            width:200px;
+        }
+        */
+
+
+        /* GOOGLE ICONS */
+        .material-icons{
+            &.md-16 { 
+                font-size: 16px; 
+            }
+            &.md-36 { 
+                font-size: 36px; 
+            }
+            &.md-40 { 
+                font-size: 40px; 
+            }
+            &.md-48 { 
+                font-size: 48px; 
+            }
+        }
+    </style>
+
+  </head>
+  <body>
+    <div id="containerI">
+        <div class="main">111</div>
+    </div>
+
+
+
+    <!-- 整合存放：HTML、CSS、Javascript 整合存至 index.html <script> ... </script> -->
+    <script></script>
+
+    <!-- 連結外部 SCRIPT -->
+    <script src="script.js"></script>
+  </body>
+</html>
+
