@@ -31,17 +31,16 @@
     }
 
     html, body {
+        min-height: 99vh;
         color: #000;
-      
         touch-action: none; /* 阻止特定觸控行為*/
         overflow: hidden; /* 防止頁面滾動 */
-      
     }
 
 
     #containerI {
         margin: 3px;
-        min-height: 99vh;
+        min-height: 50vh;
         text-align: center;
         container-type: size;
         container-name: resize-box;
@@ -81,7 +80,7 @@
     @media (min-width: 390px) and (max-width: 420px) {
         #containerI {
             width: 384px;
-            height: 99%;    
+            height: 50%;    
             max-height: 669px;             
             background: var(--FiveColor01);
         }
