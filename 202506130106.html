@@ -31,7 +31,7 @@
     }
 
     html, body {
-        min-height: 100vh;
+        min-height: 99.9vh;
         color: #000;
       
         touch-action: none; /* 阻止特定觸控行為*/
@@ -42,7 +42,7 @@
 
     #containerI {
         margin: 3px;
-        min-height: 100vh;
+        min-height: 99.9vh;
         text-align: center;
         container-type: size;
         container-name: resize-box;
@@ -129,12 +129,7 @@
 
 
 
-    <!-- 整合存放：HTML、CSS、Javascript 整合存至 index.html <script> ... </script> -->
-    <script>
-        document.addEventListener('touchmove', function (e) {
-            e.preventDefault();
-        }, { passive: false });
-    </script>
+
 
     <!-- 連結外部 SCRIPT -->
     <script src="script.js"></script>
