@@ -31,9 +31,12 @@
     }
 
     html, body {
-        height: 99%;
-        overflow: hidden; /* 防止頁面滾動 */
+        min-height: 100vh;
         color: #000;
+      
+        touch-action: none; /* 阻止特定觸控行為*/
+        overflow: hidden; /* 防止頁面滾動 */
+      
     }
 
 
