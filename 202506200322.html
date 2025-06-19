@@ -1,0 +1,422 @@
+<!-- 此網頁為 HTML、CSS、Javascript 分開存放 -->
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <!-- iphone Web APP -->
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+    <!-- iphone Web APP 應用名稱 & 圖示 -->
+    <meta name="application-name" content="OmO"/>
+    <link rel="apple-touch-icon-precomposed" sizes="120x120"
+          href="https://pngimg.com/uploads/letter_q/letter_q_PNG35.png"/>
+
+    <title> 網頁標題 </title>
+    <!-- 連結外部 CSS -->
+    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <!-- 連結外部 GOOGLE FONTS -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"/>
+    <!-- 連結外部 GOOGLE ICONS -->      
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    
+    <!-- 整合存放：HTML、CSS、Javascript 整合存至 index.html <style> ... </style> -->
+    <style>
+:root {
+    --FiveColor01: lightskyblue;
+    --FiveColor02: #ff6;
+    --FiveColor03: #f9c;
+    --FiveColor04: lightgreen;
+    --FiveColor05: #c9f;
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html, body {
+    color: #000;
+    overflow: hidden;
+}
+
+#containerI {
+    width: calc(100vw - 6px);
+    min-height: 99vh;
+    margin: 3px;    
+    text-align: center;
+
+    overflow: hidden; /* 防止頁面滾動 */
+    touch-action: none; /* 防止觸控位移 */
+}
+
+.main {
+    height: calc(98.7vh - 54px);
+
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    border:1px solid #000;
+    /* opacity: 0.5; */
+}
+
+.nav {
+    height:54px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    border:1px solid #000;
+    border-top: none;
+
+    background: #333;
+}
+
+.nav span {
+    list-style-type: none;
+    width: 100%;
+    height: 54px;
+
+    line-height: 1.5;
+    font-size:8pt;
+}
+.nav span a {
+    width: 100%;
+    height: 100%;
+
+    text-decoration: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: end;
+
+    font-size: 8pt;
+    color: #fff;
+
+}
+
+.nav span a:hover {
+    width: 100%;
+    color: #000;
+    font-size: 10pt;
+    background: #666;
+    opacity: 0.6;    
+}
+
+
+#tab01 {
+    width: 100%;
+    height: calc(98.7vh - 54px);
+    background: #ccc;
+
+    display:none;
+}
+
+.tab01-box01 {
+    height: 86px;
+    background: #fff;
+    margin: 5px;
+    border-radius: 8px;
+}
+
+.tab01-box02 {   
+    height: calc(98.7vh - 156px);
+
+    position: relative;
+    top:0;
+    margin: 5px 5px 0 5px;
+    background: #fff;   
+    border-radius: 8px;
+
+    overflow-y: auto;
+}
+
+
+#tab02 {
+    width: 100%;
+    height: calc(98.7vh - 54px);
+    background: #ccc;
+
+
+}
+
+.tab02-box01 {
+    height: 32px;
+    background: #a8a8a8;
+    margin: 5px;
+}
+
+.tab02-box02 {   
+    height: calc(98.7vh - 102px);
+
+    position: relative;
+    top:0;
+    margin: 5px 5px 0 5px;
+    background: #fff;   
+
+    overflow-y: auto;
+}
+
+.tab02-box02 h5 {
+    text-align: left;
+    padding-left: 7px;
+    width: 100%;    
+    padding: 3px 8px 3px 8px;
+}
+
+.tab02-box02-tiltle01 h5 {
+    background: var(--FiveColor01);
+}
+
+.tab02-box02-tiltle02 h5 {
+    background: var(--FiveColor02);
+}
+
+.tab02-box02-tiltle03 h5 {
+    background: var(--FiveColor03);
+}
+
+
+.tab02-box02-group {
+    text-align:left;
+    margin: 3px 0 15px 0;
+}
+
+.tab02-box02-group span {
+    width: 100%;
+    line-height: 2.5;
+}
+
+.tab02-box02-group span a {
+    width:100%;
+    text-decoration: none;
+    display:block;    
+    margin-top: 3px;
+    padding-left: 18px;   
+    font-size: 10pt;
+    color: #000;
+
+    background: #fff;    
+}
+
+.tab02-box02-group span a:hover {
+    width:100%;
+    background: #ccc;    
+    opacity: 0.6;
+
+    color: #000;    
+}
+
+.tab02-box02-group hr {
+    border: 1px dashed #ccc;
+}
+
+
+#tab03 {
+    width: 100%;
+    height: calc(98.7vh - 54px);
+    background: #ccc;
+    
+    display:none;
+}
+
+.tab03-box01 {
+    height: 32px;
+    background: #a8a8a8;
+    margin: 5px;
+}
+
+.tab03-box02 {   
+    height: calc(98.7vh - 102px);
+    position: relative;
+    top:0;
+    margin: 5px 5px 0 5px;
+
+    background: #fff;   
+    padding: 0 6px;
+    overflow-y: auto;
+}
+
+.tab03-box02 span {
+    text-align: left;
+}
+
+.tab03-box02 span a {
+    text-decoration: none;
+    margin-top: 3px;
+    padding: 10px 0 10px 8px;
+    display:block;   
+    color: #000;
+    font-size: 10pt;
+}
+
+.tab03-box02 span a:hover {
+
+    color: #000;
+    font-size: 10pt;
+    background: #ccc;
+    opacity: 0.6;    
+}
+
+.tab03-box02 hr {
+    border: 1px dashed #ccc;
+}
+
+
+
+/* 螢幕寬度 <= 384px */
+@media (max-width: 384px) {
+    #containerI {
+        min-width: 378px;
+        min-height: 99vh;
+        background: var(--FiveColor02);          
+    }
+}
+
+/* 螢幕寬度 385px - 389px */
+@media (min-width: 385px) and (max-width: 389px) {
+    #containerI {
+        width: calc(100vw - 6px);
+        min-height: 99vh;
+        background: var(--FiveColor03);           
+    }
+}
+
+/* 螢幕寬度 390px - 420px */
+@media (min-width: 390px) and (max-width: 452px) {
+    #containerI {
+        width: calc(100vw - 6px);
+        min-height: 654px; 
+        height: 100%;     
+        background: var(--FiveColor01);          
+    }
+
+}
+
+/* 螢幕寬度 > 421px */
+@media (min-width: 453px) {
+    #containerI {
+        width: 452px;
+        min-height: 99vh;
+        background: #f9f9f9;     
+    }
+
+}
+
+
+
+
+/* GOOGLE ICONS */
+.material-icons{
+    &.md-16 { 
+        font-size: 16px; 
+    }
+    &.md-36 { 
+        font-size: 36px; 
+    }
+    &.md-40 { 
+        font-size: 40px; 
+    }
+    &.md-48 { 
+        font-size: 48px; 
+    }
+}    
+
+
+    </style>
+
+  </head>
+  <body>
+    <div id="containerI">
+      <div class="main">
+        <div id="tab01">                              
+          <div class="tab01-box01"></div>
+          <div class="tab01-box02">
+            TIMELINE
+          </div>
+        </div>
+        <div id="tab02">
+          <div class="tab02-box01"></div>
+          <div class="tab02-box02">
+            <div class="tab02-box02-tiltle01"><h5>群組A</h5></div>
+            <div class="tab02-box02-group tab02-box02-group01">
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>         
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>   
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>                                    
+            </div>
+
+            <div class="tab02-box02-tiltle02"><h5>群組B</h5></div>            
+            <div class="tab02-box02-group tab02-box02-group02">
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>   
+            </div>
+
+            <div class="tab02-box02-tiltle03"><h5>群組C</h5></div>
+            <div class="tab02-box02-group tab02-box02-group03">
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>   
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>
+              <span><a href="#1">1111</a></span><hr>                 
+            </div>
+
+          </div>          
+        </div>
+        <div id="tab03">                              
+          <div class="tab03-box01"></div>
+          <div class="tab03-box02">
+              <span><a href="#1">。Calc</a></span><hr>
+              <span><a href="#1">。Calc</a></span><hr>
+              <span><a href="#1">。Calc</a></span><hr>
+          </div>
+        </div>
+
+      </div>
+      <div class="nav">
+          <span><a href="#tab01">TIMELINE</a></span>
+          <span><a href="#1">LINK</a></span>
+          <span><a href="#1">CALC</a></span>
+          <span><a href="#1">NEWS</a></span>
+          <span><a href="#1">PROFILE</a></span>         
+        </ul>
+      </div>
+
+    </div>
+
+
+
+    <!-- 整合存放：HTML、CSS、Javascript 整合存至 index.html <script> ... </script> -->
+    <script></script>
+
+    <!-- 連結外部 SCRIPT -->
+    <script src="script.js"></script>
+  </body>
+</html>
+
