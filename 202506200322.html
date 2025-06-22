@@ -28,7 +28,7 @@
     --FiveColor01: lightskyblue;
     --FiveColor02: #ff6;
     --FiveColor03: #f9c;
-    --FiveColor04: lightgreen;
+    --FiveColor04: #8e8;
     --FiveColor05: #c9f;
 }
 
@@ -38,15 +38,12 @@
     box-sizing: border-box;
 }
 
-html, body {
-    color: #000;
-    overflow: hidden;
+body {
+    overflow: hidden; /* 防止頁面滾動 */    
 }
 
 #containerI {
-    width: calc(100vw - 6px);
-    min-height: 99vh;
-    margin: 3px;    
+    min-height: 100vh;
     text-align: center;
 
     overflow: hidden; /* 防止頁面滾動 */
@@ -54,37 +51,33 @@ html, body {
 }
 
 .main {
-    height: calc(98.7vh - 54px);
+    height: calc(100vh - 78px);
 
     display:flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 
-    border:1px solid #000;
     /* opacity: 0.5; */
 }
 
 .nav {
-    height:54px;
+    height: 78px;
 
     display: flex;
     flex-direction: row;
     justify-content: center;
-    align-items: center;
+    align-items: start;
 
-    border:1px solid #000;
-    border-top: none;
+    border-top:1px solid #000;
 
     background: #333;
 }
 
 .nav span {
-    list-style-type: none;
     width: 100%;
-    height: 54px;
+    height: 58px;
 
-    line-height: 1.5;
     font-size:8pt;
 }
 .nav span a {
@@ -113,25 +106,29 @@ html, body {
 
 #tab01 {
     width: 100%;
-    height: calc(98.7vh - 54px);
+    height: calc(100vh - 78px);
     background: #ccc;
 
-    display:none;
+
 }
 
 .tab01-box01 {
     height: 86px;
     background: #fff;
-    margin: 5px;
+    margin: 8px;
     border-radius: 8px;
 }
 
+.tab01-box01 span {
+    font-size: 21pt;
+ }
+
 .tab01-box02 {   
-    height: calc(98.7vh - 156px);
+    height: calc(100vh - 185px);
 
     position: relative;
     top:0;
-    margin: 5px 5px 0 5px;
+    margin: 0px 8px 0 8px;
     background: #fff;   
     border-radius: 8px;
 
@@ -139,26 +136,77 @@ html, body {
 }
 
 
+.tab01-box02-timeline {
+    text-align: left;
+}
+
+.tab01-box02-timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: #8e8;
+    left: 20px;
+    margin-left: -2px;
+}
+
+
+.tab01-box02-item {
+    padding: 8px 40px;
+    position: relative;
+    margin-bottom: 8px;
+
+}
+
+.tab01-box02-item::before {
+    content: '';
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background: #fff;
+    border: 3px solid pink;
+    border-radius: 50%;
+    top: 15px;
+    left: 10px;
+}
+
+
+.tab01-box02-content {
+    padding: 8px;
+    background: #fff;
+    border-radius: 6px;
+    box-shadow: 0 3px 14px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.tab01-box02-content .date {
+    font-size: 1rem;
+
+}
+
+
+
 #tab02 {
     width: 100%;
-    height: calc(98.7vh - 54px);
+    height: calc(100vh - 78px);
     background: #ccc;
 
-
+    display:none;
 }
 
 .tab02-box01 {
     height: 32px;
     background: #a8a8a8;
-    margin: 5px;
+    margin: 6px;
 }
 
 .tab02-box02 {   
-    height: calc(98.7vh - 102px);
+    height: calc(100vh - 123px);
 
     position: relative;
     top:0;
-    margin: 5px 5px 0 5px;
+    margin: 6px 6px 0 6px;
     background: #fff;   
 
     overflow-y: auto;
@@ -221,7 +269,7 @@ html, body {
 
 #tab03 {
     width: 100%;
-    height: calc(98.7vh - 54px);
+    height: calc(100vh - 78px);
     background: #ccc;
     
     display:none;
@@ -230,14 +278,14 @@ html, body {
 .tab03-box01 {
     height: 32px;
     background: #a8a8a8;
-    margin: 5px;
+    margin: 6px;
 }
 
 .tab03-box02 {   
-    height: calc(98.7vh - 102px);
+    height: calc(100vh - 123px);
     position: relative;
     top:0;
-    margin: 5px 5px 0 5px;
+    margin: 6px 6px 0 6px;
 
     background: #fff;   
     padding: 0 6px;
@@ -274,8 +322,8 @@ html, body {
 /* 螢幕寬度 <= 384px */
 @media (max-width: 384px) {
     #containerI {
-        min-width: 378px;
-        min-height: 99vh;
+        min-width: 384px;
+        min-height: 100vh;
         background: var(--FiveColor02);          
     }
 }
@@ -283,8 +331,8 @@ html, body {
 /* 螢幕寬度 385px - 389px */
 @media (min-width: 385px) and (max-width: 389px) {
     #containerI {
-        width: calc(100vw - 6px);
-        min-height: 99vh;
+        width: 100%;
+        min-height: 100vh;
         background: var(--FiveColor03);           
     }
 }
@@ -292,9 +340,8 @@ html, body {
 /* 螢幕寬度 390px - 420px */
 @media (min-width: 390px) and (max-width: 452px) {
     #containerI {
-        width: calc(100vw - 6px);
-        min-height: 654px; 
-        height: 100%;     
+        width: 100%;
+        min-height: 100vh;   
         background: var(--FiveColor01);          
     }
 
@@ -304,8 +351,8 @@ html, body {
 @media (min-width: 453px) {
     #containerI {
         width: 452px;
-        min-height: 99vh;
-        background: #f9f9f9;     
+        min-height: 100vh;
+        background: #8e8;     
     }
 
 }
@@ -329,7 +376,6 @@ html, body {
     }
 }    
 
-
     </style>
 
   </head>
@@ -337,9 +383,34 @@ html, body {
     <div id="containerI">
       <div class="main">
         <div id="tab01">                              
-          <div class="tab01-box01"></div>
+          <div class="tab01-box01">
+            <span>工欲善其事, 必先利其器</span>
+          </div>
           <div class="tab01-box02">
-            TIMELINE
+            <div class="tab01-box02-timeline">
+              <div class="tab01-box02-item">
+                <div class="tab01-box02-content">
+                    <span class="date">2025/00/00</span>
+                    <span class="title">11111111111111111111111</span>                                     
+                </div>
+              </div>
+
+              <div class="tab01-box02-item">
+                <div class="tab01-box02-content">
+                    <span class="date">2025/00/00</span>
+                    <span class="title">22222222222222222222222</span>                                     
+                </div>
+              </div>
+
+              <div class="tab01-box02-item">
+                <div class="tab01-box02-content">
+                    <span class="date">2025/00/00</span>
+                    <span class="title">33333333333333</span>                                     
+                </div>
+              </div>
+
+              
+            </div>
           </div>
         </div>
         <div id="tab02">
@@ -405,7 +476,6 @@ html, body {
           <span><a href="#1">CALC</a></span>
           <span><a href="#1">NEWS</a></span>
           <span><a href="#1">PROFILE</a></span>         
-        </ul>
       </div>
 
     </div>
