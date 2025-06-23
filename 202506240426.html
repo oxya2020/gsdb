@@ -1,0 +1,431 @@
+<!-- 此網頁為 HTML、CSS、Javascript 分開存放 -->
+<!DOCTYPE html>
+<html lang="zh-TW">
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+        <!-- iphone Web APP -->
+        <meta name="apple-mobile-web-app-capable" content="yes"/>
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+        <!-- iphone Web APP 應用名稱 & 圖示 -->
+        <meta name="application-name" content="OmO"/>
+        <link href="https://pngimg.com/uploads/letter_q/letter_q_PNG35.png" rel="apple-touch-icon-precomposed" sizes="120x120"/>
+
+        <title> 網頁標題 </title>
+
+        <!-- 連結外部 CSS -->
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <!-- 連結外部 GOOGLE FONTS -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet"/>
+        <!-- 連結外部 GOOGLE ICONS -->      
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+
+        <!-- 整合存放：HTML、CSS、Javascript 整合存至 index.html <style> ... </style> -->
+        <style>
+:root {
+    --FiveColor01: lightskyblue;
+    --FiveColor02: #ff6;
+    --FiveColor03: #f9c;
+    --FiveColor04: #8e8;
+    --FiveColor05: #c9f;
+}
+
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden; /* 防止頁面滾動 */    
+}
+
+#containerI {
+    min-height: 100vh;
+    text-align: center;
+
+    overflow: hidden; /* 防止頁面滾動 */
+    touch-action: none; /* 防止觸控位移 */
+}
+
+.main {
+    height: calc(100vh - 40px);
+}
+
+
+.box1 {
+    height: 32px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: #fff;
+    
+}
+
+.box1-content {
+    font-size: 10pt;
+}
+
+
+.box2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    border-bottom: 1px solid #000;
+    /* opacity: 0.5; */   
+
+}
+
+.box2-content1 {
+    height: 90px;
+    aspect-ratio: 1/1;
+    margin: 6px;
+    border-radius: 100%;
+    background: #fff;
+}
+
+.box2-content2 {
+    height: 90px;
+    aspect-ratio: 2.8/1;
+    margin: 6px 0 6px 0;
+}
+
+.box2-part1 {
+    height: 40px;
+    background: #fff;
+    margin: 0 3px 6px 3px;
+    border-radius: 8px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.box2-part2 {
+    height: 40px;
+    width: 100%;
+    aspect-ratio: 1/1;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.box2-info {
+    margin: 3px 3px 0 3px;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 8px;
+    background: #fff;
+}
+
+.box2-info1 {
+    height: 45px;
+    width: 100%;
+}
+
+.box2-info2 {
+    height: 45px;
+    aspect-ratio: 1/1;
+}
+
+.box2-info-L {
+    height: 45px;
+    width: 100%;   
+
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: start;
+
+    padding: 5px 0 5px 10px;
+    font-size: 8pt;
+}
+
+.box2-info1 .box2-info-C {
+    width: 100%;  
+    font-size: 12pt;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 30px 0 15px;
+}
+
+.box2-info2 .box2-info-C {
+    width: 100%;  
+    font-size: 12pt;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    padding: 0 0 0 15px;
+}
+
+.box2-info-R {
+    width: 100%;     
+    height: 45px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: end;
+
+    font-size: 8pt;
+    padding: 5px;
+}
+
+
+.box3 {
+    min-height: calc(100vh - 176px);
+    padding: 6px 5px 12px 5px;
+
+    display: block;
+    overflow-y: scroll;
+
+
+}
+
+.box3 a {
+    text-decoration: none;
+}
+
+.box3 a {
+    color: #000;
+}
+
+.box3-content-L {
+    display: flex;
+    flex-direction: row;
+    justify-content: start;
+    align-items: center;
+
+    margin: 3px 9px 3px 9px;
+
+}
+
+.box3-L1 {
+    width: 56px;
+    height: 54px;
+    padding: 16px;
+    border-radius: 8px 0 0 8px;
+    padding: 16px;
+
+    background: #333;
+    color: #fff;
+}
+
+.box3-L1:hover {
+    font-size: 12pt;
+    background: var(--FiveColor02);
+    color: #000;
+}
+
+
+.box3-L2 {
+    min-width: 300px;
+    width: calc(100vw - 56px);
+    padding: 10px 60px 10px 0;
+    text-align: right;
+    border-radius: 0 8px 8px 0;
+    background:#fff;
+}
+
+.box3-L2:hover {
+    background: #33ccff;
+}
+
+
+
+.box3-content-R {
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    align-items: center;
+
+    margin: 6px 9px 6px 9px;
+}
+
+.box3-R1 {
+    min-width: 300px;
+    width: calc(100vw - 56px);
+    padding: 10px 0 10px 60px;
+    text-align:left;
+    border-radius: 8px 0 0 8px;
+    background:#fff;
+
+}
+
+.box3-R1:hover { 
+    font-size: 12pt;
+    background: var(--FiveColor02);
+    color: #000;    
+}
+
+.box3-R2 {
+    width: 56px;
+    height: 54px;
+    padding: 16px;
+    border-radius: 0 8px 8px 0;
+    background: #333;
+    color: #fff;
+}
+
+.box3-R2:hover {
+    background: var(--FiveColor03);
+    color: #000;      
+}
+
+
+.footer {
+    height: 20px;
+
+    border-top: 1px solid #000;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* 螢幕寬度 <= 384px */
+@media (max-width: 384px) {
+    #containerI {
+        min-width: 384px;
+        min-height: 100vh;
+        background: var(--FiveColor02);          
+    }
+}
+
+/* 螢幕寬度 385px - 389px */
+@media (min-width: 385px) and (max-width: 389px) {
+    #containerI {
+        width: 100%;
+        min-height: 100vh;
+        background: var(--FiveColor03);           
+    }
+}
+
+/* 螢幕寬度 390px - 420px */
+@media (min-width: 390px) and (max-width: 452px) {
+    #containerI {
+        width: 100%;
+        min-height: 100vh;   
+        background: var(--FiveColor01);          
+    }
+
+}
+
+/* 螢幕寬度 > 421px */
+@media (min-width: 453px) {
+    #containerI {
+        width: 452px;
+        min-height: 100vh;
+        background: #8e8;     
+    }
+
+}
+
+
+
+
+/* GOOGLE ICONS */
+.material-icons{
+    &.md-16 { 
+        font-size: 16px; 
+    }
+    &.md-36 { 
+        font-size: 36px; 
+    }
+    &.md-40 { 
+        font-size: 40px; 
+    }
+    &.md-48 { 
+        font-size: 48px; 
+    }
+}    
+
+        </style>
+    </head>
+    <body>
+        <div id="containerI">
+            <div class="main">
+                <div class="box1">
+                    <div class="box1-content">News</div>
+                </div>     
+
+                <div class="box2">
+                    <div class="box2-content1"></div>
+                    <div class="box2-content2">
+                        <div class="box2-part1">工欲善其事, 必先利其器</div>
+                        <div class="box2-part2">
+                            <div class="box2-info box2-info1">
+                                <span class="box2-info-L">誕生日</span><br>
+                                <span class="box2-info-C">2025/00/00</span>
+                            </div>
+                            <div class="box2-info box2-info2">
+                                <span class="box2-info-C">N</span><br>
+                                <span class="box2-info-R">個</span>                                
+                            </div>
+                        </div>                                           
+                    </div>
+                </div>
+
+                <div class="box3">
+                    <a href="#tab1"><div class="box3-content-L">
+                        <div class="box3-L1">1</div>
+                        <div class="box3-L2">1111111111111</div>
+                    </div></a>
+
+                    <a href="#tab1"><div class="box3-content-R">
+                        <div class="box3-R1">2222222222</div>
+                        <div class="box3-R2">2</div>
+                    </div></a>
+
+                    <div class="box3-content-L">
+                        <div class="box3-L1">3</div>
+                        <div class="box3-L2">3333</div>
+                    </div>
+
+                    <div class="box3-content-R">
+                        <div class="box3-R1">444444444444</div>
+                        <div class="box3-R2">4</div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="footer">Designed BY ooooo</div>             
+        </div>
+
+
+        <!-- 整合存放：HTML、CSS、Javascript 整合存至 index.html <script> ... </script> -->
+        <script></script>
+
+        <!-- 連結外部 SCRIPT -->
+        <script src="script.js"></script>
+    </body>
+</html>
+
